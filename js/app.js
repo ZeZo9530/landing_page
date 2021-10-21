@@ -87,16 +87,29 @@ for (var i = 1; i <= 4 ; i++){
 
 document.getElementById('sec1').addEventListener('click',function (){
   document.getElementById('section1').scrollIntoView({behavior:"smooth"})
+  activeSection(document.getElementById('section1'));
 })
 
 document.getElementById('sec2').addEventListener('click',function (){
   document.getElementById('section2').scrollIntoView({behavior:"smooth"})
+  activeSection(document.getElementById('section2'));
 })
 
 document.getElementById('sec3').addEventListener('click',function (){
   document.getElementById('section3').scrollIntoView({behavior:"smooth"})
+  activeSection(document.getElementById('section3'));
 })
 
 document.getElementById('sec4').addEventListener('click',function (){
   document.getElementById('section4').scrollIntoView({behavior:"smooth"})
+  activeSection(document.getElementById('section4'));
 })
+
+
+//to active and deactive the class 
+
+function activeSection (x){
+  var actv = document.getElementsByClassName('your-active-class');
+  actv[0].classList.remove("your-active-class");
+  x.className="your-active-class";
+}
