@@ -118,11 +118,11 @@ function isInViewport(elm) {
       x.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
-var findMe = document.querySelectorAll(".sect")
+var findSect = document.querySelectorAll(".sect")
 
 window.addEventListener('scroll', function(evt){
 
-  findMe.forEach(element => {
+  findSect.forEach(element => {
 
     if (isInViewport(element)){
       element.classList.add("your-active-class");
