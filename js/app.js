@@ -107,9 +107,26 @@ document.getElementById('sec4').addEventListener('click',function (){
 
 
 //to active and deactive the class 
+//updated
 
-function activeSection (x){
-  var actv = document.getElementsByClassName('your-active-class');
-  actv[0].classList.remove("your-active-class");
-  x.className="your-active-class";
+function isInViewport(elm) {
+  const x = elm.getBoundingClientRect();
+  return (
+      x.top >= 0 &&
+      x.left >= 0 &&
+      x.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      x.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
 }
+var findMe = document.querySelectorAll(".sect")
+
+window.addEventListener('scroll', function(evt){
+
+  findMe.forEach(element => {
+
+    if (isInViewport(element)){
+      element.classList.add("your-active-class");
+    }
+    else {element.classList.remove("your-active-class")}
+  });
+}, false);
